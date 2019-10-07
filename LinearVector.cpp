@@ -12,9 +12,11 @@ void XuatVector( vector<float> &data)
 {
 	string s;
 	cout << "Xuat vector" << endl;
+        cout << "v = <";
 	for (int i = 0; i < data.size(); i++) {
-		cout << "Thanh phan "<<i+1<<" cua vector: "<< data[i] << endl;
+		cout << data[i] << ", ";
 	}
+        cout << ">" << endl;
 }
 void CongVector(vector<float>& data1, vector<float>& data2) {
 	vector<float>kq;
