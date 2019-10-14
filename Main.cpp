@@ -1,4 +1,5 @@
 #include "LinearVector.h"
+#include "Matrix.h"
 void main() {
 	int n;
 	cout << "***----Ho Tro Hoc Tap Toan Cao Cap----***"<<endl;
@@ -59,7 +60,12 @@ void main() {
 		} while (a < 6 || a>10);
 		switch (a) {
 		case 6: {
+			int m, n;
 			cout << "6: Dinh thuc cua ma tran" << endl;
+			vector<vector<float>>data;
+			nhap(data,m,n);
+			xuat(data,m,n);
+			cout<<Determinant(data, m)<<endl;
 			exit(0);
 		}
 		case 7: {
