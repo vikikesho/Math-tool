@@ -1,15 +1,9 @@
-#ifndef _Matrix_H
-#define _Matrix_H
+#pragma once
 #include<iostream>
-#include<vector>
 using namespace std;
-struct Matrix {
-	vector<vector<float>>data;
-	float m, n;
-};
-void nhap(vector<vector<float>>& data, int& m, int& n);
-void xuat(vector<vector<float>> data, int m, int n);
-//float dinhthuc(vector<vector<float>>data, int m, int n);
-void CoFactor(vector<vector<float>>a, vector<vector<float>>temp, int p, int q, int n);
-float Determinant(vector<vector<float>>a, int n);
-#endif
+#include<vector>
+#define N 10
+void nhap(int a[N][N], int& m, int& n);
+void xuat(int a[N][N], int m, int n);
+void CoFactor(int a[N][N], int temp[N][N], int p, int q, int n);
+float Determinant(int a[N][N], int n);

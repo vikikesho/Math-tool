@@ -1,8 +1,10 @@
 #include "LinearVector.h"
 #include "Matrix.h"
-void main() {
+#include "Inverse.h"
+#include"MultiMatrix.h"
+void main(){
 	int n;
-	cout << "***----Ho Tro Hoc Tap Toan Cao Cap----***"<<endl;
+	cout << "***----Ho Tro Hoc Tap Toan Cao Cap----***" << endl;
 	cout << "1: Tim cong thuc da thuc toi tieu cua ham Bool" << endl;
 	cout << "2: Phep toan tren vector" << endl;
 	cout << "3: Phep toan tren ma tran" << endl;
@@ -10,8 +12,8 @@ void main() {
 		cout << "Nhap vao so thu tu cua phep tinh toan" << endl;
 		cin >> n;
 	} while (n < 1 || n > 3);
-	switch (n) {
-	case 1:{
+	switch (n){
+	case 1: {
 		cout << "Tim cong thuc da thuc toi tieu" << endl;
 		exit(0);
 	}
@@ -36,7 +38,7 @@ void main() {
 			XuatVector(data2);
 			CongVector(data1, data2);
 			exit(0);
-		} 
+		}
 		case 5: {
 			cout << "Nhan vector voi 1 so" << endl;
 			vector<float>data;
@@ -62,18 +64,63 @@ void main() {
 		case 6: {
 			int m, n;
 			cout << "6: Dinh thuc cua ma tran" << endl;
-			vector<vector<float>>data;
-			nhap(data,m,n);
-			xuat(data,m,n);
-			cout<<Determinant(data, m)<<endl;
+			int a[N][N];
+			cout << "Nhap vao so dong cua ma tran" << endl;
+			cin >> m;
+			cout << "Nhap vao so cot cua ma tran" << endl;
+			cin >> n;
+			while (m != n) {
+				cout << "Nhap lai m" << endl;
+				cin >> m;
+				cout << "Nhap lai n" << endl;
+				cin >> n;
+			}
+			nhap(a, m, n);
+			xuat(a, m, n);
+			cout << "Dinh thuc cua ma tran bang: " << Determinant(a, n) << endl;
 			exit(0);
 		}
 		case 7: {
 			cout << "7: Nghich dao cua ma tran" << endl;
+			int m, n;
+			int b[M][M];
+			cout << "Nhap vao so dong cua ma tran" << endl;
+			cin >> m;
+			cout << "Nhap vao so cot cua ma tran" << endl;
+			cin >> n;
+			while (m != n) {
+				cout << "Nhap lai m" << endl;
+				cin >> m;
+				cout << "Nhap lai n" << endl;
+				cin >> n;
+			}
+			int adj[M][M];  // To store adjoint of A[][] 
+			float inv[M][M]; // To store inverse of A[][]
+			nhap1(b, m, n);
+			adjoint(b, adj);
+			xuat1(b, m, n);
+			cout << "The Inverse is : " << endl;
+			if (inverse(b, inv))
+				xuat1(b, m, n);
 			exit(0);
 		}
 		case 8: {
 			cout << "8: Tich 2 ma tran" << endl;
+			vector<vector<float>> data1, data2;
+			int m1, n1,m2, n2;
+			cout << "Nhap vao so dong cua ma tran" << endl;
+			cin >> m1;
+			cout << "Nhap vao so cot cua ma tran" << endl;
+			cin >> n1;
+			nhap(data1, m1, n1);
+			xuat(data1, m1, n1);
+			cout << "Nhap vao so dong cua ma tran" << endl;
+			cin >> m2;
+			cout << "Nhap vao so cot cua ma tran" << endl;
+			cin >> n2;
+			nhap(data2, m2, n2);
+			xuat(data2, m2, n2);
+			multiply(m1, n1, data1, m2, n2, data2);
 			exit(0);
 		}
 		case 9: {
@@ -81,7 +128,7 @@ void main() {
 			exit(0);
 		}
 		case 10: {
-			cout <<"10: He phuong trinh tuyen tinh" << endl;
+			cout << "10: He phuong trinh tuyen tinh" << endl;
 			exit(0);
 		}
 		}

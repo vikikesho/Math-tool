@@ -8,15 +8,14 @@ void TaoVector(vector<float> &data) {
 		cin >> data[i];
 	}
 }
-void XuatVector( vector<float> &data)
+void XuatVector(vector<float>& data)
 {
-	string s;
 	cout << "Xuat vector" << endl;
-        cout << "v = <";
+	cout << "v = <";
 	for (int i = 0; i < data.size(); i++) {
 		cout << data[i] << ", ";
 	}
-        cout << ">" << endl;
+	cout << ">" << endl;
 }
 void CongVector(vector<float>& data1, vector<float>& data2) {
 	vector<float>kq;
