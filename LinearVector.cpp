@@ -1,5 +1,5 @@
 #include "LinearVector.h"
-void TaoVector(vector<float> &data) {
+void TaoVector(vector<double> &data) {
 	int n;
 	cout << "Nhap vao so phan tu cua vector " ;
 	cin >> n;
@@ -8,7 +8,7 @@ void TaoVector(vector<float> &data) {
 		cin >> data[i];
 	}
 }
-void XuatVector(vector<float>& data)
+void XuatVector(vector<double>& data)
 {
 	cout << "Xuat vector" << endl;
 	cout << "v = <";
@@ -17,8 +17,8 @@ void XuatVector(vector<float>& data)
 	}
 	cout << ">" << endl;
 }
-void CongVector(vector<float>& data1, vector<float>& data2) {
-	vector<float>kq;
+void CongVector(vector<double>& data1, vector<double>& data2) {
+	vector<double>kq;
 	kq.resize(data1.size());
 	if (data1.size() != data2.size()) {
 		cout << "Khong du so phan tu cua vector co the cong" << endl;
@@ -30,14 +30,16 @@ void CongVector(vector<float>& data1, vector<float>& data2) {
 		}
 	}
 }
-void NhanVector(vector<float>&data) {
+void NhanVector(vector<double>&data) {
 	int n;
 	cout << "Nhap vao 1 so alpha" << endl;
 	cin >> n;
-	vector<float>kq;
+	vector<double>kq;
 	kq.resize(data.size());
+	cout << "v = <";
 	for (int i = 0; i < data.size(); i++) {
 		kq[i] = data[i] * n;
-		cout << "Vector tich thanh phan thu " << i + 1 << " = " << kq[i] << endl;
+		cout  << kq[i] << ",";
 	}
+	cout << ">" << endl;
 }

@@ -1,8 +1,5 @@
 #include"MultiMatrix.h"
-void nhap(vector<vector<float>> a, int &m, int &n) {
-	a.resize(m);
-	for (int i = 0; i < m; i++)
-		a[i].resize(n);
+void nhap(int a[], int &m, int &n) {
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
 			cout << "Phan tu thu " << "[" << i << "]" << "[" << j << "]" << endl;
@@ -10,7 +7,7 @@ void nhap(vector<vector<float>> a, int &m, int &n) {
 		}
 	}
 }
-void xuat(vector<vector<float>> a, int m, int n)
+void xuat(int a[], int m, int n)
 {
 	for (int i = 0; i < m; i++) {
 		cout << "| ";
@@ -20,14 +17,10 @@ void xuat(vector<vector<float>> a, int m, int n)
 		cout << "|" << endl;
 	}
 }
-void multiply(int m1, int m2, vector<vector<float>> data1, int n1, int n2, vector<vector<float>> data2)
+void multiply(int m1, int m2, int data1[], int n1, int n2, int data2[])
 {
 	int  i, j;
-	vector<vector<float>> res;
-	res.resize(data1.size());
-	for (int i = 0; i < m1; i++)
-		res[i].resize(data2.size());
-
+	int res[100];
 	for (i = 0; i < m1; i++)
 	{
 		for (j = 0; j < n2; j++)
@@ -45,6 +38,6 @@ void multiply(int m1, int m2, vector<vector<float>> data1, int n1, int n2, vecto
 		{
 			cout << res[i][j];
 		}
-		cout << "\n";
+		cout <<endl;
 	}
 }

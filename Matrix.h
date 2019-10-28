@@ -2,8 +2,7 @@
 #include<iostream>
 using namespace std;
 #include<vector>
-#define N 10
-void nhap(int a[N][N], int& m, int& n);
-void xuat(int a[N][N], int m, int n);
-void CoFactor(int a[N][N], int temp[N][N], int p, int q, int n);
-float Determinant(int a[N][N], int n);
+void nhap(vector<vector<double>>&data, int &m, int &n);
+void xuat(vector<vector<double>>data, int m, int n);
+void CoFactor(vector<vector<double>>data, vector<vector<double>>temp, int p, int q, int n);
+double Determinant(vector<vector<double>>data, int n);
